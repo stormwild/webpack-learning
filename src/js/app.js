@@ -1,4 +1,7 @@
-import { groupBy } from 'lodash/collection'
+import {
+  groupBy
+}
+from 'lodash/collection'
 
 const people = [{
   manager: 'Jen',
@@ -17,4 +20,5 @@ const people = [{
 const managerGroups = groupBy(people, 'manager')
 
 const root = document.querySelector('#root')
+const dateTime = document.querySelector('#date-time').innerHTML = new Date()
 root.innerHTML = `<pre>${JSON.stringify(managerGroups, null, 2)}</pre>`

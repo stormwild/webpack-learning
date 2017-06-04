@@ -3,10 +3,12 @@ const path = require('path')
 
 const config = {
   context: path.resolve(__dirname, 'src'),
-  entry: './app.js',
+  entry: {
+    app: './js/app.js'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: './js/[name].bundle.js'
   },
   module: {
     rules: [{
@@ -16,7 +18,9 @@ const config = {
         loader: 'babel-loader',
         options: {
           presets: [
-            ['es2015', { modules: false }]
+            ['es2015', {
+              modules: false
+            }]
           ]
         }
       }]
